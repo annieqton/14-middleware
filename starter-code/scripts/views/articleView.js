@@ -17,7 +17,8 @@
     return template(article);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: What does this method do?  What is it's execution path?
+  // This method sets up and populate the filters for author and category. Using Handlebars method it compiles the data to the option-template in index.html.  The two methods Article.allAuthor() and Article.allCategories() return author and category formt he data that then will be mapped and append to the author-filter and category-filter in the index.html.
   articleView.populateFilters = function() {
     var options;
     var template = Handlebars.compile($('#option-template').text());
@@ -36,7 +37,8 @@
     });
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: What does this method do?  What is it's execution path?
+  // This method is set up to handle the url path for each click event on the filter.
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       var resource = this.id.replace('-filter', '');
@@ -85,7 +87,8 @@
      });
    }; */
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  // DONE: What does this method do?  What is it's execution path?
+  // This method hides the About and Blog Stats section and show the articles. When a particular article is expanded (read-on), this method removes all articles and only render the current article.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
